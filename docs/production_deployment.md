@@ -1,19 +1,14 @@
-# SaaSKit Production Deployment
+# Deploying to Production
 
-## Prereqs
+## Prerequisites
 
-- This section (SasSKit Production Deployment) assumes that a local development
-  environment has been setup and tested
-  - Supabase DB and Auth has been done
-  - Stripe has been setup and configured
-  - **TODO:** There might be some Prod-specific configurations that need to be
-    done
+This section assumes that a
+[local development environment](#getting-started-locally) has been set up and
+tested.
 
-## Authentication
+**TODO:** There might be some Prod-specific configurations that need to be done
 
-### Create a Supabase account
-
-- Create the account
+## Auth and Database (Supabase)
 
 ### Create and Populate a Supabase Database
 
@@ -22,7 +17,7 @@
   - customers table
 - Click on the Database button on the Supabase dashboard
 - Select Tables icon -> Create New Table
-- Create todos and cusomers tables
+- Create todos and customers tables
 
 ### Setting up Supabase Auth
 
@@ -46,24 +41,16 @@
     - Todos table
       - Same policy configuration as the customers table
 
-## Payments
+## Payments (Stripe)
 
-### Create a Stripe Account
-
-- Stripe CLI account creation does it manually
+In order to use Stripe in production, you'll have to
+[activate your Stripe account](https://stripe.com/docs/account/activate).
 
 ### Add a bank to your Stripe account
 
 - Select a Bank from the list on
   https://dashboard.stripe.com/account/onboarding/bank-account
 - Login to your bank's online account and authorize an account for use by Stripe
-
-### Install and activate the Stripe CLI
-
-- Follow install instructions on https://stripe.com/docs/stripe-cli
-- Run `stripe login` on the command-line and complete the login in your browser
-  with key exchange
-- Once setup, authentication lasts for 90 days
 
 ## Activate a Stripe Premium Account
 
@@ -82,7 +69,13 @@ stripe products create --name="Premium tier" --default-price-data.unit-amount=50
 
 ## Deno Deploy
 
+These steps show you how to deploy your SaaS app close to your users at the edge
+with [Deno Deploy](https://deno.com/deploy).
+
 ### Automatic Deployment using a Github Link
+
+The simplest way to use Deno Deploy is via linking to GitHub. Every time you
+merge to `main` your SaaS will be deployed globally within seconds.
 
 - Activate Deno Deploy app in Github
   - Go to personal account
@@ -143,7 +136,7 @@ jobs:
   - Add the names and values of the variables in the `.env` file
     - TODO: Change to prod-specific values
 
-## Deploy to a Virtual Private Server
+## Using Docker to Deploy to any VPS
 
 See https://deno.com/blog/npm-and-deno-anywhere
 
@@ -158,7 +151,7 @@ See https://deno.com/blog/npm-and-deno-anywhere
   - `README.md`, `.env`, `.example.env`, `LICENSE` files
   - `.vscode`, `.git`, `.github` folders
 
-### AWS Lightsail
+### Deploying to AWS Lightsail
 
 - Create an AWS account if you don't have one
 
@@ -186,7 +179,7 @@ See https://deno.com/blog/npm-and-deno-anywhere
 - After deployment is completed, click on the public address link to see your
   app in the browser
 
-### Digital Ocean
+### Deploying to Digital Ocean
 
 - Create an Digital Ocean account if you don't have one
 - Install the doctl CLI
