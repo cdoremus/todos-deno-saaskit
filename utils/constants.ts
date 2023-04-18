@@ -1,10 +1,14 @@
 // Copyright 2023 the Deno authors. All rights reserved. MIT license.
-export const SITE_NAME = "Your SaaS";
-export const SITE_DESCRIPTION = "Some details about your SaaS.";
+export const SITE_NAME = "Craig's SaaS";
+export const SITE_DESCRIPTION = "The best SaaS around!!";
 
 export const AUTHENTICATED_REDIRECT_PATH = "/dashboard";
 
-export const STRIPE_PREMIUM_PLAN_PRICE_ID = "price_1MPiEkD6QJts4RaYcp1SevPe";
+export const STRIPE_PREMIUM_PLAN_PRICE_ID = "price_1MwvC6EOqsNTUoMKO8RAJdcU";
+// price_1MwvC6EOqsNTUoMKO8RAJdcU
+// price_1MwraOEOqsNTUoMKNze3fb65
+// Product ID: prod_NiLtUOWe1eIg6I
+// Product ID: prod_NiIAj32rtaoklO
 
 export const FREE_PLAN_TODOS_LIMIT = 5;
 
